@@ -8,19 +8,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="EurekaServer" />
-        <module name="api-catalog" />
         <module name="api-movie" />
         <module name="configServer" />
-        <module name="gateway" />
         <module name="api-serie" />
+        <module name="api-catalog" />
+        <module name="ConfigServer" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigServer" options="-parameters" />
       <module name="EurekaServer" options="-parameters" />
       <module name="api-catalog" options="-parameters" />
       <module name="api-movie" options="-parameters" />
+      <module name="api-serie" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="gateway" options="-parameters" />
     </option>

@@ -8,7 +8,6 @@ spring :
     config :
       server :
         git :
-          uri : https://github.com/DaianaServin/esp-back-i-parcial
-          default-label : develop
+          uri : https://github.com/DaianaServin/esp-back-i-final.git
+          default-label : main
           force-pull : true
-          search-paths : configData
