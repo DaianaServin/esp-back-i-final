@@ -11,3 +11,4 @@ spring :
           uri : https://github.com/DaianaServin/esp-back-i-final.git
           default-label : main
           force-pull : true
+          search-paths: ConfigData
