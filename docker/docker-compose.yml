@@ -5,18 +5,16 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'movie-dev'
-      MYSQL_USER: 'usr-movie'
-      MYSQL_PASSWORD: 'pwd-movie'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'root'
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
-      # <Port exposed> : < MySQL Port running inside container>
       - '3306:3306'
     expose:
-      # Opens port 3306 on the container
       - '3306'
-      # Where our data will be persisted
+
     healthcheck:
-      test: [ "CMD", "usr-serie-mysql", "ping", "-ppwd-serie-mysql", "--silent" ]
+      test: [ "CMD", "root", "ping", "root", "--silent" ]
       interval: 5s
       timeout: 3s
       retries: 10
@@ -26,8 +24,6 @@ services:
       restart: always
       environment:
         MONGO_INITDB_DATABASE: 'seriedevmongo'
-        MONGO_INITDB_ROOT_USERNAME: ''
-        MONGO_INITDB_ROOT_PASSWORD: ''
       ports:
         - 27018:27018
       expose:
@@ -40,8 +36,6 @@ services:
     restart: always
     environment:
       MONGO_INITDB_DATABASE: 'catalogdevmongo'
-      MONGO_INITDB_ROOT_USERNAME: ''
-      MONGO_INITDB_ROOT_PASSWORD: ''
     ports:
       - 27017:27017
     expose:
