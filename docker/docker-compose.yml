@@ -12,36 +12,11 @@ services:
       - '3306:3306'
     expose:
       - '3306'
-
     healthcheck:
       test: [ "CMD", "root", "ping", "root", "--silent" ]
       interval: 5s
       timeout: 3s
       retries: 10
-  mongocontenedor:
-      image: mongo
-      container_name: mongocontenedor
-      restart: always
-      environment:
-        MONGO_INITDB_DATABASE: 'seriedevmongo'
-      ports:
-        - 27018:27018
-      expose:
-        - 27018
-      volumes:
-        - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
-  mongocontenedorUno:
-    image: mongo
-    container_name: mongocontenedorUno
-    restart: always
-    environment:
-      MONGO_INITDB_DATABASE: 'catalogdevmongo'
-    ports:
-      - 27017:27017
-    expose:
-      - 27017
-    volumes:
-      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongoUno-init.js:ro
   zipkin-contenedor:
       image: openzipkin/zipkin-slim
       container_name: zipkin-contenedor

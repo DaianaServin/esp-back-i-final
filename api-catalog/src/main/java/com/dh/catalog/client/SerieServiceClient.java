@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name="api-movie")
+@FeignClient(name="api-serie")
 public interface SerieServiceClient {
 
     @GetMapping("/api/v1/series/{genre}")

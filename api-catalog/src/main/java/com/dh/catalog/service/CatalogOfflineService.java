@@ -4,14 +4,15 @@ import com.dh.catalog.model.Movie;
 import com.dh.catalog.model.Serie;
 import com.dh.catalog.repository.MovieRepositoryMongo;
 import com.dh.catalog.repository.SerieRepositoryMongo;
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class CatalogOfflineService {
-    final static Logger log = Logger.getLogger(CatalogOfflineService.class);
+
     private final MovieRepositoryMongo movieRepositoryMongo;
     private final SerieRepositoryMongo serieRepositoryMongo;
 
